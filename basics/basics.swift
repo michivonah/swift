@@ -43,6 +43,12 @@ func conditions(){
 
 }
 
+// inline if/else statement
+myBool ? "Value when true" : "Value when false"
+
+// toggle Boolean
+myBool.toggle()
+
 // function with parameters & return value
 // hint: when a return the only thing is in a function you don't have to write return in swift
 func divideBy(num1: Double, num2: Double) -> Double {
@@ -237,3 +243,17 @@ print(1..<100) // print all numbers from 1 to 100
 // String interpolation
 let myVar: Int = 78
 print("my var: \(myVar)")
+
+// SwiftUI stuff
+// switftui needs to be imported when you want to build UI with it
+// import SwiftUI
+
+// states & bindings
+// States are needed, becuase a struct in swift gets destroyed and recreated. With states you can make the UI/variables stateful
+// @State private var isNight: Bool = false
+// bindings are used for handing over stateful variables to view structs, etc.
+// with a binding you can pass over the value
+@Binding var isNight: Bool
+// then its required to pass a @State variable over to this struct on creation
+// to pass a variable you need to add $ in front of it
+BackgroundView(isNight: $isNight)
